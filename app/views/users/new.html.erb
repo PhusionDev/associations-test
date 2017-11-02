@@ -1,2 +1,6 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h2> New User </h2>
+
+<%= form_for @user do |f| %>
+  <%= render partial: 'user_fields', locals: {f: f} %>
+  <%= f.submit "Create New User" %>
+<% end %>
