@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.save
+    if @user.update_attributes(user_params)
       redirect_to user_path(@user)
     else
       render 'edit'
@@ -52,6 +52,13 @@ class UsersController < ApplicationController
       :email_confirmation,
       :password,
       :password_confirmation,
+      profile_attributes: [
+        :id,
+        :full_name,
+        :age,
+        :gender,
+        :about
+      ]
     )
   end
 end
