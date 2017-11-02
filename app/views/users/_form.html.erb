@@ -1,3 +1,9 @@
 <%= form_for @user do |f| %>
+  <%= render partial: 'user_fields', locals: {f: f} %>
 
+  <%= fields_for :profile do |builder| %>
+    <%= render partial: 'profile_fields', locals: {f: builder} %>
+  <% end %>
+
+  <%= f.submit 'Save Profile' %>
 <% end %>
