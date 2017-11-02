@@ -1,6 +1,6 @@
 <h2>New User</h2>
 
 <%= form_for @user do |f| %>
-  <%= render partial: 'user_fields', locals: {f: f} %>
+  <%= render partial: 'new_user_fields', locals: {f: f} %>
   <%= f.submit "Create New User" %>
 <% end %>
