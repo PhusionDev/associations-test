@@ -1,7 +1,7 @@
 <%= form_for @user do |f| %>
   <%= render partial: 'user_fields', locals: {f: f} %>
 
-  <%= f.fields_for :profile do |builder| %>
+  <%= f.fields_for :profile, @user.profile do |builder| %>
     <%= render 'profile_fields', f: builder %>
   <% end %>
 
